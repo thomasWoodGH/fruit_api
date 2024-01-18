@@ -1,11 +1,13 @@
 require('dotenv').config()
 const express = require("express")
+const cors = require("cors")
 const app = express()
 const port = process.env.PORT
 const fruits = require("./fruits.json")
 const logger = require("./logger.js")
 
 // middleware
+app.use(cors())
 app.use(express.json())
 app.use(logger)
 
